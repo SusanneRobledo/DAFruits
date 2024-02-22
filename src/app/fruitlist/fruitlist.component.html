@@ -27,7 +27,19 @@
           <img src="./assets/img/stars/star-empty.svg" alt="" srcset="" />
           } -->}
 
-          <p>({{ fruit.stars }})</p>
+          <!--           <p
+            [ngStyle]="{
+              color: fruit.stars > 3 ? fontColorGood : fontColorBad
+            }"
+          > -->
+          <p
+            [ngClass]="{
+              fontColorBad: fruit.stars < 3,
+              fontColorGood: fruit.stars >= 3
+            }"
+          >
+            ({{ fruit.stars }})
+          </p>
         </div>
       </div>
       <div><b>Art:</b><br />{{ fruit.genus }}</div>
